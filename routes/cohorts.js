@@ -26,6 +26,13 @@ router.post("/", async (req, res) => {
 });
 
 // Get cohort
-router.get("/", async (req, res) => {});
+router.get("/", async (req, res) => {
+	try {
+	} catch (error) {
+		res.status(500).json({
+			message: "Sorry, but there was an error while retrieving cohorts"
+		});
+	}
+});
 
 module.exports = router;
