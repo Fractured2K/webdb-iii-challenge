@@ -28,6 +28,9 @@ router.post("/", async (req, res) => {
 // Get cohort
 router.get("/", async (req, res) => {
 	try {
+		const cohorts = await db("cohorts");
+
+		res.status(200).json(cohorts);
 	} catch (error) {
 		res.status(500).json({
 			message: "Sorry, but there was an error while retrieving cohorts"
