@@ -61,6 +61,9 @@ router.get("/:id", async (req, res) => {
 	}
 });
 
+// Get cohort students
+router.get("/:id/students", async (req, res) => {});
+
 // Update cohort
 router.put("/:id", async (req, res) => {
 	try {
