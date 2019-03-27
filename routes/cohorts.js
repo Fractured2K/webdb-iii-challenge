@@ -62,7 +62,15 @@ router.get("/:id", async (req, res) => {
 });
 
 // Get cohort students
-router.get("/:id/students", async (req, res) => {});
+router.get("/:id/students", async (req, res) => {
+	try {
+	} catch (err) {
+		res.status(500).json({
+			message:
+				"Sorry, but there was an error while getting those students"
+		});
+	}
+});
 
 // Update cohort
 router.put("/:id", async (req, res) => {
