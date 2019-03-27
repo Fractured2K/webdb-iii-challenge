@@ -25,4 +25,7 @@ router.post("/", async (req, res) => {
 	}
 });
 
+// Get cohort
+router.get("/", async (req, res) => {});
+
 module.exports = router;
