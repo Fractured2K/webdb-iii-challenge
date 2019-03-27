@@ -39,6 +39,14 @@ router.get("/", async (req, res) => {
 });
 
 // Get cohort by id
-router.get("/:id", async (req, res) => {});
+router.get("/:id", async (req, res) => {
+	try {
+	} catch (err) {
+		res.status(500).json({
+			message:
+				"Sorry, but there was an error while retrieving that cohort"
+		});
+	}
+});
 
 module.exports = router;
