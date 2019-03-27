@@ -41,6 +41,18 @@ router.get("/", async (req, res) => {
 // Get cohort by id
 router.get("/:id", async (req, res) => {
 	try {
+		const { id } = req.params;
+
+		const cohort = await db("cohorts")
+			.first()
+			.where({ id });
+
+		if (!cohort)
+			return res
+				.status(404)
+				.json({ message: "Sorry, but that cohort doesn't exist" });
+
+		res.status(200).json(cohort);
 	} catch (err) {
 		res.status(500).json({
 			message:
