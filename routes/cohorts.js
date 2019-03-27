@@ -62,6 +62,14 @@ router.get("/:id", async (req, res) => {
 });
 
 // Update cohort
-router.put("/:id", async (req, res) => {});
+router.put("/:id", async (req, res) => {
+	try {
+	} catch (err) {
+		res.status(500).json({
+			message:
+				"Sorry, but there was an error while trying to update that chohort"
+		});
+	}
+});
 
 module.exports = router;
