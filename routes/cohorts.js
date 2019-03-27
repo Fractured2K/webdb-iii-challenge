@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
 	}
 });
 
-// Get cohort
+// Get all cohorts
 router.get("/", async (req, res) => {
 	try {
 		const cohorts = await db("cohorts");
@@ -83,5 +83,8 @@ router.put("/:id", async (req, res) => {
 		});
 	}
 });
+
+// Delete cohort
+router.delete("/:id", async (req, res) => {});
 
 module.exports = router;
