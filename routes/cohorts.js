@@ -85,6 +85,14 @@ router.put("/:id", async (req, res) => {
 });
 
 // Delete cohort
-router.delete("/:id", async (req, res) => {});
+router.delete("/:id", async (req, res) => {
+	try {
+	} catch (err) {
+		res.status(500).json({
+			message:
+				"Sorry, but there was an error while trying to delete that cohort"
+		});
+	}
+});
 
 module.exports = router;
