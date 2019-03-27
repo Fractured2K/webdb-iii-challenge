@@ -64,6 +64,16 @@ router.get("/:id", async (req, res) => {
 // Get cohort students
 router.get("/:id/students", async (req, res) => {
 	try {
+		const { id } = req.params;
+
+		const students = await db("students").where({ cohort_id: id });
+
+		if (!students.length)
+			res.status(404).json({
+				message: "Sorry, but no students were found"
+			});
+
+		res.status(200).json(students);
 	} catch (err) {
 		res.status(500).json({
 			message:
